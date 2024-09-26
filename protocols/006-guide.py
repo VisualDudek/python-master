@@ -1,6 +1,7 @@
 # example of (explicite) formal protocol
 # ellipsis (...) syntax
 # IntAdder and FloatAdder DO NOT inherit from Adder portocol
+# will get to typhints in next file
 from typing import Protocol
 
 
