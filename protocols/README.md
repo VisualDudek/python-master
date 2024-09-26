@@ -7,6 +7,10 @@
 - see problem in 005, structural subtyping is good but it can be better -> Protocols
 - move from (inplicite interfance implementation) structural subtyping TO formal protocol
 - ellipsis (...) syntax
+- issues while using type hints with Protocols
+- using type hints union is not an option
+- `T = TypeVar("T", bound= )` syntax, in Python 3.12 type generic definition can be skiped in favor of `add[T: int | float]`
+- mypy is not ready for above future syntax
 
 Takeaway:
 1. duck typing and type hints collide
