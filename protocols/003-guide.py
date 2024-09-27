@@ -21,3 +21,5 @@ def make_it_quack(duck: QuackingThing) -> str:  # crucial change
 print(make_it_quack(Duck()))  # OK
 
 print(make_it_quack(Person()))  # Now at static type checker everything is ok
+# inheritance is a solution but not ideal -> clear inheritance relationship
+# BUT classes are tightly coupled
