@@ -10,7 +10,7 @@ counter: itertools.count = itertools.count(start=0, step=1)
 values = [next(counter) for _ in range(5)]
 assert values == [0, 1, 2, 3, 4]
 
-counter: itertools.count = itertools.count(start=10, step=2)
+counter: itertools.count = itertools.count(start=10, step=2)  # type: ignore
 values = []
 for _ in range(5):
     values.append(next(counter))
