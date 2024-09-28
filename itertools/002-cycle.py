@@ -1,6 +1,7 @@
 import itertools
 
 # itertools.cycle(iterable)
+# repeats indefinitely
 cycler = itertools.cycle(["a", "b", "c"])
 values = [next(cycler) for _ in range(6)]
 assert values == ["a", "b", "c", "a", "b", "c"]
