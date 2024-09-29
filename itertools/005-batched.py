@@ -42,5 +42,8 @@ def conditional_batches(iterable: Iterable, condition: Callable[[Any], bool]):
 values = list(conditional_batches([1, 2, 0, 4, 5], lambda x: x == 0))
 assert values == [(1, 2), (0, 4, 5)]
 
-## Batching with Dynamic Sizes
 # TODO
+## Batching with Dynamic Sizes
+
+# TODO
+## Batching with Padding: pad last batch witch a specified value if is not full.
