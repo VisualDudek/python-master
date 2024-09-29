@@ -2,6 +2,7 @@
 # in background after all other work is done and main coroutine is
 # suposed to exit. Without mod. main coroutine exit before task1 is completed.
 # Key Takeaway: two awaits in main coroutine run in sync (one after another)
+# See my best solution in mian (commented)
 import asyncio
 from typing import List, Coroutine
 
@@ -52,7 +53,13 @@ async def main():
     processor = AsyncProcessor()
 
     await processor.run_tasks_without_waiting()
-    await processor.monitor_tasks()
+    await processor.monitor_tasks()  # will start monitoring after
+    # .run_tasks_without_waiting complete
+
+    # My best solution:
+    # await asyncio.gather(
+    #     processor.run_tasks_without_waiting(), processor.monitor_tasks()
+    # )
 
     print("Main coroutine is done.")
 
