@@ -4,7 +4,7 @@
 # (in which case the class is both an iterable and an iterator) or separate iterator class.
 # 2. __next__(sefl): this method should return next item from the seq when called
 # and raise StopIteration when there are no more items
-# Q: How to check if an object is iterable?
+# Q: How to check if an object is iterable? -> isinstance() or tre-except iter(obj)
 
 
 class MyIterable:
