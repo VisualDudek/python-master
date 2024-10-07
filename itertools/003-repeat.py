@@ -30,7 +30,7 @@ assert values == [0, 1, 4, 9, 16]
 
 
 # example with zip:
-# zip(*iterales, strict=False)
+# zip(*iterables, strict=False)
 values = list(zip(itertools.repeat(1), ["a", "b", "c"]))  # type: ignore
 assert values == [
     (1, "a"),
