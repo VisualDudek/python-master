@@ -1,5 +1,10 @@
 **Takeaway:**
 1. Abstract base classes (ABCs) complement duck-typing, see POC 005-6
+2. ABCs is based on nominal typing
+3. Protocols as alternative to ABCs -> first ABCs next Protocols
+4. ABCs conceptually belongs to subclasses and OOP hierarhy, whereas protocols belongs more closely to the places where they're used.
+5. Interface segregation, it is part of SOLID
+6. ABCs in Python provide a mechanism for defining interfaces. An interface defines a set of methods that a class must implement to be considered compatible with the interface.
 
 **Key Topics:**
 
