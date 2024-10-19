@@ -5,14 +5,15 @@
 4. ABCs conceptually belongs to subclasses and OOP hierarhy, whereas protocols belongs more closely to the places where they're used.
 5. Interface segregation, it is part of SOLID
 6. ABCs in Python provide a mechanism for defining interfaces. An interface defines a set of methods that a class must implement to be considered compatible with the interface.
+7. problems with define interface by `hasattr()`
 
 **Key Topics:**
 
 PEP 3119 - Introducing Abstract Base Classes
 
-**Abstract base classes (ABCs)** complement duck-typing by providing a way to define interfaces when other techniques like hasattr() would be clumsy or subtly wrong (for example with magic methods). ABCs introduce virtual subclasses, which are classes that don’t inherit from a class but are still recognized by isinstance() and issubclass(); see the abc module documentation. Python comes with many built-in ABCs for data structures (in the collections.abc module), numbers (in the numbers module), streams (in the io module), import finders and loaders (in the importlib.abc module). You can create your own ABCs with the abc module.
+**Abstract base classes (ABCs)** complement duck-typing by providing a way to define interfaces when other techniques like `hasattr()` would be clumsy or subtly wrong (for example with magic methods). ABCs introduce virtual subclasses, which are classes that don’t inherit from a class but are still recognized by isinstance() and issubclass(); see the abc module documentation. Python comes with many built-in ABCs for data structures (in the collections.abc module), numbers (in the numbers module), streams (in the io module), import finders and loaders (in the importlib.abc module). You can create your own ABCs with the abc module.
 
-**duck-typing** A programming style which does not look at an object’s type to determine if it has the right interface; instead, the method or attribute is simply called or used (“If it looks like a duck and quacks like a duck, it must be a duck.”) By emphasizing interfaces rather than specific types, well-designed code improves its flexibility by allowing polymorphic substitution. **holy grail of understanding** -> Duck-typing avoids tests using `type()` or `isinstance()`. (Note, however, that duck-typing can be complemented with abstract base classes.) Instead, it typically employs hasattr() tests or EAFP programming.
+**duck-typing** A programming style which does not look at an object’s type to determine if it has the right interface; instead, the method or attribute is simply called or used (“If it looks like a duck and quacks like a duck, it must be a duck.”) By emphasizing interfaces rather than specific types, well-designed code improves its flexibility by allowing polymorphic substitution. **holy grail of understanding** -> Duck-typing avoids tests using `type()` or `isinstance()`. (Note, however, that duck-typing can be complemented with abstract base classes.) Instead, it typically employs `hasattr()` tests or EAFP programming.
 
 **EAFP** Easier to ask for forgiveness than permission. This common Python coding style assumes the existence of valid keys or attributes and catches exceptions if the assumption proves false. This clean and fast style is characterized by the presence of many `try` and `except` statements. The technique contrasts with the LBYL style common to many other languages such as C.
 
@@ -47,7 +48,7 @@ for item in obj:
 
 **in deep** understanding Virtual Subclass.
 - Why use virtual subclasses? -> Virtual subclasses give you the flexibility to declare that a class should be considered part of an interface without enforcing inheritance. This is useful in cases where you don't want to change an existing class’s inheritance chain but still want to declare that it adheres to a particular interface or contract.
-- holy grail of understanding, -> n Python, virtual subclasses are classes that are recognized by `isinstance()` and `issubclass()` checks as being a subclass of an abstract base class (ABC), even if they don’t explicitly inherit from that ABC. This is different from a regular subclass, which directly inherits from a parent class. Virtual subclasses are registered with the ABC using the `register()` method, rather than using normal class inheritance. Once registered, a virtual subclass will behave as if it were a subclass of the ABC for the purposes of `isinstance()` and `issubclass()`, but it doesn’t actually inherit any methods or attributes from the ABC.
+- holy grail of understanding, -> in Python, virtual subclasses are classes that are recognized by `isinstance()` and `issubclass()` checks as being a subclass of an abstract base class (ABC), even if they don’t explicitly inherit from that ABC. This is different from a regular subclass, which directly inherits from a parent class. Virtual subclasses are registered with the ABC using the `register()` method, rather than using normal class inheritance. Once registered, a virtual subclass will behave as if it were a subclass of the ABC for the purposes of `isinstance()` and `issubclass()`, but it doesn’t actually inherit any methods or attributes from the ABC.
 - Why you want class that doesn't inherit from parent? show me the real POC
 
 **in deep** interface vs. contracts
