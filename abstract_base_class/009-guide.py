@@ -1,6 +1,6 @@
 # TAKEAWAY: Use protocol definitions as types ALSO in type hints
 # SEE do_read and do_write fn.
-# TAKEAWAY: Employning protocols as types in fn. U can have cass definitions
+# TAKEAWAY: Employning protocols as types in fn. U can have class definitions
 # that do not have any relations with Writable or Readable protocol SEE Author
 
 from typing import Protocol
