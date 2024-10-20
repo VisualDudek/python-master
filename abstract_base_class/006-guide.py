@@ -6,6 +6,8 @@
 # the code of Car and Truck or its documentation.
 # SOLUTION: ABC called Vehicle
 # typechecker will complain which methods are not implemented
+# TAKEAWAY: `@abstractmethod` decorator is just to enforce implementation
+# given method
 
 
 from abc import ABC, abstractmethod
