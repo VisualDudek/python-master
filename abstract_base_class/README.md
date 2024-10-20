@@ -6,6 +6,8 @@
 5. Interface segregation, it is part of SOLID
 6. ABCs in Python provide a mechanism for defining interfaces. An interface defines a set of methods that a class must implement to be considered compatible with the interface.
 7. problems with define interface by `hasattr()`
+8. Note that when using abc, your classes are coupled with the base class. This can be limitation because you won't be able to reuse one of your classes in a different project unless you also take the abctract base class with you.
+9. duck-typing -> abc -> protocols
 
 **Key Topics:**
 
