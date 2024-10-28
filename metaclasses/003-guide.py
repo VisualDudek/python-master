@@ -2,6 +2,7 @@
 # use dunder `__call__`
 # see this great example
 # do the "syntax suger" and replace .do_it() with just ()
+# this example will make much more sens when you see 012 example with abstractmethod
 
 import subprocess
 

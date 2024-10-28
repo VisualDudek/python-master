@@ -1,6 +1,7 @@
 # Everything in Python is an object
 # what is the top hierarchy obj. ?
 # TAKEAWAY: Python do not idstinct beetwen string and char, both are type 'str'
+# - 'type()' is the name of this game
 
 print(f"{type(1)=}")
 

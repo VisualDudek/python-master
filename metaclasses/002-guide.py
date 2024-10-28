@@ -1,6 +1,5 @@
 # How to take advantego of type() ?
 # Create class without class key word
-# TAKEAWAY: mypy will no know about dynamic class attribs.
 
 
 class A:

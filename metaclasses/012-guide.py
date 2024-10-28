@@ -1,4 +1,4 @@
-# very good example, simple ABC
+# very good example, simple ABC, focus on vvvvvvvvv
 # TAKEAWYA: how abc.abstractmethod works under hood, just dunder __isabstractmethod__ attrib.
 # if just prevents to create instance from class that do not implement abstractmethods
 
@@ -23,6 +23,7 @@ def abstractmethods(cls):
     return abstract
 
 
+# vvvvvvvvvvvvvvvvvvvvvvv
 class ABCMeta(type):
     def __call__(abccls, *args, **kwargs):  # called when you -> A()
         print("call", abccls, args, kwargs)

@@ -10,6 +10,7 @@
 # see example: create MetaClass that count how many classes were created, NOT instances
 # TAKEAWAY: you can hook when a programmer defines a class and do things with it, see next file
 # for real world metaclasses
+# TAKEAWAY: `class A(metaclass=CounterMeta): pass` -> just convention to hide it from user
 
 
 class CounterMeta(type):
@@ -21,6 +22,7 @@ class CounterMeta(type):
         return kls
 
 
+# another "syntax sugar" convention
 # NOTE that this is only reference, there is no invokation
 class A(metaclass=CounterMeta):
     pass

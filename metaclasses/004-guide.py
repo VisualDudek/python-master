@@ -19,7 +19,9 @@ def new(cls):
     return obj
 
 
-A = type("A", (), {"__new__": new})
+A = type(
+    "A", (), {"__new__": new}
+)  # if fact this is meta class bc it change how obj is created
 
 a = A()
 print(f"{a.desc=}")
