@@ -25,7 +25,10 @@ class ActionCall:
 
 # make it work
 hellos_call = ActionCall(
-    [["echo", "hello world from dunder"], ["echo", "good morning, says dunder _call__"]]
+    [
+        ["echo", "hello world from dunder"],
+        ["echo", "good morning, says dunder __call__"],
+    ]
 )
 # vvvvvvvvvvvvv
 hellos_call()
