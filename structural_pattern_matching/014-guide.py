@@ -12,3 +12,6 @@ def is_adult(age):
 is_adult(18)  # True
 is_adult(18.0)  # False
 is_adult(18.0 + 0.0j)  # False
+
+for age in (18, 18.0, 18.0 + 0.0j):
+    print(is_adult(age=age))
