@@ -22,8 +22,13 @@ Each pattern describes the structure of an object to match, including its type, 
 - when you dealing with overlapping patterns -> order of case clauses will matter
 - `exec()` vs. `eval()`
 - expressions are statements, but not the other way around -> in overlapping patterns expression should go first. Statement in this context is more generic -> expression is a statement wiht side effect
-- Literal
-- Unlike many oteer programming languages, Python allows the case clauses in pttern matching to remain **non-exhaustive**
+- Literal type checking 
+- Unlike many other programming languages, Python allows the case clauses in pttern matching to remain **non-exhaustive**
+- catch-all case by using wildcard pattern (_) **behaves linke keyword** within a structural pattern -> never binds the subject to a name, so you won't be able to refer to it inside case clause.
+- you can reuse the underscore several times as a subpattern to discard certain elements of other patterns.
+- **Literal Pattern** generally lets you restrict the value of the subject instead of its type or structure -> suitable for emulating the `switch` statement BUT do not do this
+- f-string do not work with structural pattern bc. f-stirng typically involve string interpolation, which must be done at runtime. -> f-strings are NOT Literal patterns
+- ensure strict type checking using class pattern
 
 ## Whent to use structural pattern matching?
 The answer to when to use pattern matching is right there in its name: structural pattern matching. In short, you should use pattern matching when you want to **make a decision based on the structure of complex data and possibly destructure it at the same time**. This approach can help you adopt a more declarative coding style, which is especially beneficial if you’re following the functional programming paradigm.
@@ -37,3 +42,5 @@ In contrast, if you’re making a decision **based on complex business rules** t
 **match statement** - subject
 
 **case clauses** - structural pattern
+1. **Literal Pattern**
+2. **Class Pattern** for strict type checking  
