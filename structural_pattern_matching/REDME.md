@@ -30,6 +30,9 @@ Each pattern describes the structure of an object to match, including its type, 
 - f-string do not work with structural pattern bc. f-stirng typically involve string interpolation, which must be done at runtime. -> f-strings are NOT Literal patterns
 - ensure strict type checking using class pattern
 - **Value Pattern** let you recognize variables that should be treated as constans, typically belong to some namespace, such as a class, enum or a Ptyhon module, which you can access with the dot operator.
+- Capture pattern defines its own local variable, which means that the captured name will continiue to live outside your match block
+- (!) plain capture pattern will make the subsequent case clauses unreachable bc. it matches the subject unconditionally
+- Capture patterns are the cornerstone of **destructuting**. You'll often use them as subpatterns to extract piece of information from complex objects that you want to decompose. (018)
 
 ## Whent to use structural pattern matching?
 The answer to when to use pattern matching is right there in its name: structural pattern matching. In short, you should use pattern matching when you want to **make a decision based on the structure of complex data and possibly destructure it at the same time**. This approach can help you adopt a more declarative coding style, which is especially beneficial if you’re following the functional programming paradigm.
@@ -45,7 +48,8 @@ In contrast, if you’re making a decision **based on complex business rules** t
 **case clauses** - structural pattern
 1. **Literal Pattern**
 2. **Class Pattern** for strict type checking  
-3. **Capture pattern**
-4. **Value pattern**
+3. **Value pattern**
+4. **Capture pattern** - resembles the typical variable declaration
+5. **Wildcard pattern**
 
 **guards**
