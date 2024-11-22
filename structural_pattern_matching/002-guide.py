@@ -1,4 +1,4 @@
-# pattern is not your typical expression
+# pattern is not your typical expression, subject is
 
 from dataclasses import dataclass
 
