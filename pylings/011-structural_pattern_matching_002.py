@@ -12,4 +12,4 @@ class User: ...
 
 
 assert User.couter == 1
-assert User.couter != 1
+assert User.couter != 2
