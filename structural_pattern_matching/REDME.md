@@ -50,7 +50,7 @@ Number: TypeAlias = int | float
 ```
 
 `@dataclass` decorator does not directly support class variables.
-Class variables are defined using the `ClassVar` type hint from `typing` module.
+Class variables are defined using the `ClassVar` type hint from `typing` module. (pylings 011)
 
 ## Whent to use structural pattern matching?
 The answer to when to use pattern matching is right there in its name: structural pattern matching. In short, you should use pattern matching when you want to **make a decision based on the structure of complex data and possibly destructure it at the same time**. This approach can help you adopt a more declarative coding style, which is especially beneficial if you’re following the functional programming paradigm.
