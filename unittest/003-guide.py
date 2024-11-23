@@ -15,7 +15,7 @@ def my_func():
         case EnumCommand.HELP:
             return "Showing help"
         case EnumCommand.EXIT:
-            exit()
+            exit(1)
         case _:
             print("Unknow command")
 
@@ -29,6 +29,7 @@ def test_my_func():
 
         assert mock_exit.called is True
         assert mock_exit.call_count == 1
+        assert mock_exit.call_args.args == (1,)
 
     test_with_mocked_exit()
 
