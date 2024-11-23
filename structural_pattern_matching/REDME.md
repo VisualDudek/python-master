@@ -30,7 +30,7 @@ Each pattern describes the structure of an object to match, including its type, 
 - **Literal Pattern** generally lets you restrict the value of the subject instead of its type or structure -> suitable for emulating the `switch` statement BUT do not do this
 - f-string do not work with structural pattern bc. f-stirng typically involve string interpolation, which must be done at runtime. -> f-strings are NOT Literal patterns
 - ensure strict type checking using class pattern
-- **Value Pattern** let you recognize variables that should be treated as constans, typically belong to some namespace, such as a class, enum or a Ptyhon module, which you can access with the dot operator.
+- **Value Pattern** let you recognize variables that should be treated as constans, typically belong to some namespace, such as a class, enum or a Ptyhon module, which you can access with the dot operator. (015, 016)
 - Capture pattern defines its own local variable, which means that the captured name will continiue to live outside your match block
 - (!) plain capture pattern will make the subsequent case clauses unreachable bc. it matches the subject unconditionally
 - Capture patterns are the cornerstone of **destructuting**. You'll often use them as subpatterns to extract piece of information from complex objects that you want to decompose. (018)
