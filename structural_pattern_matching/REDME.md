@@ -57,6 +57,10 @@ The answer to when to use pattern matching is right there in its name: structura
 
 In contrast, if you’re making a decision **based on complex business rules** that require a lot of computation, especially if the conditions are non-exclusive or incremental, then you may be better off choosing a different language construct. There are some well-established and usually more appropriate idioms in Python for such scenarios, like a chain of if...elif... statements.
 
+### GPT help
+- What are common use case of structural pattern matching in Python?
+- Provide examples of python frameworks or libraries that use structural pattern matching
+
 ## Key Topics
 
 **Soft Keywords** in Python 3.10 and later, my understanding: it is only for backward compatibility
