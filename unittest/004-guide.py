@@ -13,10 +13,11 @@ class TestF(unittest.TestCase):
 
     @patch("sys.stdout", new_callable=StringIO)
     def test_f(self, mock_stdout: StringIO):
+        """This is help string"""
         f()
 
         self.assertIn("Hello", mock_stdout.getvalue())
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)
