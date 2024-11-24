@@ -34,6 +34,7 @@ Each pattern describes the structure of an object to match, including its type, 
 - Capture pattern defines its own local variable, which means that the captured name will continiue to live outside your match block
 - (!) plain capture pattern will make the subsequent case clauses unreachable bc. it matches the subject unconditionally
 - Capture patterns are the cornerstone of **destructuting**. You'll often use them as subpatterns to extract piece of information from complex objects that you want to decompose. (018)
+- (?) unlike mapping pattern, when using class pattern with capture pattern you need to specify all attribs.
 - you can parse iterable using **Sequence Pattern** (019)
 - to catch empyt sequence use empty brackets `[]` or `()` (019)
 - **Sequence Pattern** do support only smal subset of Python sequences: `tuple()` `list()` `range()` `memoryview()` `array.array()` `collections.deque()` `collections.nametuple()` user-defined derivatives of `Sequence` and `MutableSequence` abc.
@@ -48,7 +49,7 @@ Each pattern describes the structure of an object to match, including its type, 
 - when you use an empty dict literal `{}` then pattern will match just about any mapping (023)
 - **Mapping Pattern** vs. **Sequence Pattern**, sequence patterns require you to either list all expected items or use the star operator (*) to indicate a variable-length sequence. In contrast, mapping patterns ignore any extra keys that exist in the subject but that you didn’t explicitly include in your pattern.
 - in mapping pattern you can use `**` (standard dict unpacking) to capture multiple key-value pairs into smaller dict (024)
-- (???) to avoid side effects as much as possible, Python doesn't use the squre brackets syntax when matching subject to one of your mappings pattarns. Rather than calling `.__getitem__()`,which square brackets use under the hood, it invodes `.get()` on the subject.
+- (?) to avoid side effects as much as possible, Python doesn't use the squre brackets syntax when matching subject to one of your mappings pattarns. Rather than calling `.__getitem__()`,which square brackets use under the hood, it invodes `.get()` on the subject.
 - instead of explicit calling `isinstance()` on the subject, you can check if the subject is an instance of the given type by using a class pattern. (025) **mind bending**
 - you can use kwargs of the class constructor to extract attribute values, positional args are not supported out of the box, class pattern needs to specify attributes order using `.__match_args__` (026)
 - fields not automatically init. in a data class are excluded form pattern matching (e.g. `__post_init__`)
@@ -118,4 +119,14 @@ In contrast, if you’re making a decision **based on complex business rules** t
 
 ```python
 # type: ignore[override]
+```
+
+Ruff for whole block
+```python
+# ruff: noqa
+```
+
+Ruff for single line
+```python
+import os # noqa
 ```
