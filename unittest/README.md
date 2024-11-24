@@ -10,3 +10,5 @@
 ## Takeaway
 - you can use `patch` with `assert` for quick and simple patch, without `unittest.TestCase` (003)
 - you can check which args mock object was called using `Mock.call_args.args` (003)
+- you can set verbosity `unittest.main(verbosity=2)` (004)
+- use help string, visible at verbosity 2 (004)
