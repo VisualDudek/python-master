@@ -25,6 +25,6 @@ command = Command(
 
 # pyright: reportMatchNotExhaustive=false
 match command:
-    # vvvvvvvvvvvv                 vvvvvvvvvvvvvvvvvvv names can be misleading
+    # vvvvvvvvvvvv                 vvvvvvvvvvvvvvvvvvv
     case Command("git", _, Command(subcommand, options)):
         print(f"{subcommand=}\n{options=}")
