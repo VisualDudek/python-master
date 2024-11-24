@@ -18,3 +18,5 @@ match input("Type your command: "):
         print("Showing help.")
     case EnumCommand.EXIT:
         exit()
+    case _:
+        pass
