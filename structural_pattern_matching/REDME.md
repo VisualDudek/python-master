@@ -34,6 +34,26 @@ Each pattern describes the structure of an object to match, including its type, 
 - Capture pattern defines its own local variable, which means that the captured name will continiue to live outside your match block
 - (!) plain capture pattern will make the subsequent case clauses unreachable bc. it matches the subject unconditionally
 - Capture patterns are the cornerstone of **destructuting**. You'll often use them as subpatterns to extract piece of information from complex objects that you want to decompose. (018)
+- you can parse iterable using **Sequence Pattern** (019)
+- to catch empyt sequence use empty brackets `[]` or `()` (019)
+- **Sequence Pattern** do support only smal subset of Python sequences: `tuple()` `list()` `range()` `memoryview()` `array.array()` `collections.deque()` `collections.nametuple()` user-defined derivatives of `Sequence` and `MutableSequence` abc.
+- Sequence pattern will match objects that you built with a list comprehension.
+- Sequence pattern DO NOT SUPPORT: `str()` `bytes()` and `bytearray()`
+- use start operator to match sequence of lenght two or more. (020)
+- you can impose additional restriction on the sequence type using class pattern (021)
+- **Mapping Pattern**, dictionaries are among one of the most important data types (022)
+- BC mappings are unordered collections of key-value, it doesn't matttern how you arrange your key-value pairs in pattern (022)
+- Values in a mapping pattern can be almost anything BUT the corresponding keys must be either literal patterns or value patterns. CANNOT use capture patterns
+- Mapping pattern besides `dict` will match also: `collections.` `ChainMap` `Counter` `OrderedDict` `UserDict` `defaultdict`
+- when you use an empty dict literal `{}` then pattern will match just about any mapping (023)
+- **Mapping Pattern** vs. **Sequence Pattern**, sequence patterns require you to either list all expected items or use the star operator (*) to indicate a variable-length sequence. In contrast, mapping patterns ignore any extra keys that exist in the subject but that you didn’t explicitly include in your pattern.
+- in mapping pattern you can use `**` (standard dict unpacking) to capture multiple key-value pairs into smaller dict (024)
+- (???) to avoid side effects as much as possible, Python doesn't use the squre brackets syntax when matching subject to one of your mappings pattarns. Rather than calling `.__getitem__()`,which square brackets use under the hood, it invodes `.get()` on the subject.
+- instead of explicit calling `isinstance()` on the subject, you can check if the subject is an instance of the given type by using a class pattern. (025) **mind bending**
+- you can use kwargs of the class constructor to extract attribute values, positional args are not supported out of the box, class pattern needs to specify attributes order using `.__match_args__` (026)
+- fields not automatically init. in a data class are excluded form pattern matching (e.g. `__post_init__`)
+- **mind bending** Structual Pattern Matching works well also with **structural subtypes** (not only with nominal subtypes). (027)
+- since class pattern call the `isinstance()` on the subject, make sure that the any protocol you match against was decorated with `@runtime_checkable`. (027)
 
 ## Learning Curve
 `AliasTypes` cannot be directly used as class patterns
@@ -51,6 +71,17 @@ Number: TypeAlias = int | float
 
 `@dataclass` decorator does not directly support class variables.
 Class variables are defined using the `ClassVar` type hint from `typing` module. (pylings 011)
+
+`Tuple[int, ...]` vs. `List[int]` (021)
+
+You can quickly convert dataclass into dict `from dataclasses import asdict` (022)
+
+Clean and nice way to test/introduce many types based on dict input. (023)
+
+When you want to annotate variable and expression in `for loop` you cannot do this in `for-loop` expresion, and do not try only annotate variable, JUST annotate before `for-loop` expresion (!!!) (025)
+
+type annotation for structural subtypes is crazy (027)
+
 
 ## Whent to use structural pattern matching?
 The answer to when to use pattern matching is right there in its name: structural pattern matching. In short, you should use pattern matching when you want to **make a decision based on the structure of complex data and possibly destructure it at the same time**. This approach can help you adopt a more declarative coding style, which is especially beneficial if you’re following the functional programming paradigm.
@@ -73,6 +104,8 @@ In contrast, if you’re making a decision **based on complex business rules** t
 3. **Value pattern**
 4. **Capture pattern** - resembles the typical variable declaration
 5. **Wildcard pattern**
+6. **Sequence Pattern** - can quickly recognize a sequence pattern by the presence of square brackets
+7. **Mapping Pattern**
 
 **guards**
 
@@ -81,4 +114,8 @@ In contrast, if you’re making a decision **based on complex business rules** t
 ## mypy -> pyright
 ```python
 # pyright: reportMatchNotExhaustive=false
+```
+
+```python
+# type: ignore[override]
 ```
