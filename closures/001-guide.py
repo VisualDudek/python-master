@@ -4,6 +4,8 @@ function remembers the values from its enclosing scope,
 even if that scope has finished executing.
 """
 
+# dla mnie to klasyczny przykłąd fn. factory
+
 
 # Example
 def outer(x: int):
