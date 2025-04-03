@@ -12,6 +12,11 @@ In Python, closures are a programming concept where a nested function remembers 
 - Real-world use cases: (1) to throttle function calls, or to accumulate values.
 - Alternatives can be : global variables, classes.
 
+komentarz: rozróżnieniu wymaga dwie operacje na zmiennych w Python-ie, (1) Assignment - create new references (2) In-place - modify existing obj.
+- `counter += 1` is an assignment operation -> create a new ref.
+- `d["c"] += 1` is an in-place modification, no new reference is created.
+boils down to "mutable vs immutable"
+
 - **Creating Function Factories** Closures are also useful for creating function factories – higher-order functions that generate customized functions on the fly. The outer function acts as a factory that sets up some configuration or parameter, and the inner function (the closure) uses that configuration when it’s called. This allows you to create multiple specialized functions without repeating code. Each generated function retains the environment in which it was created.
 - Real-world example: generating specialized logging or formatting functions: you could write a factory that takes a format string or prefix and returns a logging function that prepends that format to all messages. In general, closures make it easy to package up configuration with behavior, producing concise and customized function objects on demand.
 
