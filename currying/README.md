@@ -35,3 +35,5 @@ x.__rshift__(y)
 y.__rrshift__(x)
 ```
 3. If y also returns NotImplemented or doesn't define __rrshift__, Python raises a TypeError.
+
+- `007-guide` - do głębszego zrozumienia
