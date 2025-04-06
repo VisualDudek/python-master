@@ -10,7 +10,7 @@ Point = namedtuple("Point", ["x", "y"])  # type: ignore
 p = Point(11, y=22)  # instantiate with pos. or keyword args
 # p[0] + p[1]   indexable like the plain tuple
 
-x, y = p  # unpack linke a regular tuple
+x, y = p  # unpack like a regular tuple
 
 # NAJWIĘKSZA WARTOŚĆ DODANA
 sum = p.x + p.y  # type: ignore
