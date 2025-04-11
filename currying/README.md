@@ -4,7 +4,8 @@
 Currying is a functional programming concept where a function with multiple arguments is transformed into a sequence of functions, each taking **one argument at time**.
 
 - transformacja przy uzyciu konceptu Closures
-- Python nie ma automatycznego currying-u, jedynie `functools.partial`
+- Python nie ma automatycznego currying-u, jedynie `functools.partial`, 
+    - `functools.partial` jest o tyle przydatne że poprzez kw. może "ustawić" dowolny argument, a nasz przykład z dekoratorem curring zawsze konsumuje pierwszy argument fn.
 - custom `curry` decorator that transforms a multi-argument function into a curried version, ADVANCED 
 
 
