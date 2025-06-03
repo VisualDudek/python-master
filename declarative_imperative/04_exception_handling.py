@@ -11,7 +11,7 @@ def parse_numbers(user_inputs: list[str]) -> list[int]:
 
 def main() -> None:
     user_inputs: list[str] = ["10", "20", "invalid", "30"]
-    valid_numbers = parce_numbers(user_inputs)
+    valid_numbers = parse_numbers(user_inputs)
     print("Valid numbers:", valid_numbers)
 
 
