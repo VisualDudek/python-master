@@ -23,3 +23,7 @@ def main() -> None:
     ]
     
     transformed_data = transform(data)
+    print("Transformed data:", transformed_data)
+
+if __name__ == "__main__":
+    main()
