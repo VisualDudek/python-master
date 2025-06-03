@@ -21,6 +21,8 @@ def main() -> None:
     # Declarative approach to filter adult users
     adult_names = filter(lambda user: user['age'] >= 18, users)
     adult_users = [user['name'].upper() for user in adult_names]
+    # LUB poprzez map()
+    adult_names = list(map(lambda u: u['name'].upper(), adult_names))
 
     print(adult_users)
 
