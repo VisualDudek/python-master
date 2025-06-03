@@ -8,7 +8,7 @@ def transform(data: list[dict[str, Any]]) -> list[int]:
             # Pattern: flag is True and nested structure exists with 'd' value
             case {"flag": True, "a": {"b": {"c": {"d": d_value}}}}:
                 result.append(d_value + 5)
-            # Pattern: flag is True and nested structure exists but 'd' is missing (default to 0)
+            # Pattern: flag is True and nested structure exists but 'c' is missing (default to 0)
             case {"flag": True, "a": {"b": _ }}:
                 result.append(0 + 5)  # default value 0 + 5
             # Pattern: flag is True but structure is incomplete - append -1
