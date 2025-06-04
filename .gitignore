@@ -1,5 +1,6 @@
 # User custom
 .vscode/launch.json
+warnings.log
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
