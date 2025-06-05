@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from enum import StrEnum
 import statistics
 from typing import Protocol
 
@@ -17,6 +18,9 @@ PRICE_DATA = {
     ]
 }
 
+class Symbol(StrEnum):
+    BTCUSD = "BTC/USD"
+
 
 class ExchangeConnectionError(Exception):
     """Custom error"""
@@ -28,7 +32,7 @@ class Exchange:
 
     def connect(self) -> None:
         print("Connecting to Crypto exchange...")
-        self.connect = True
+        self.connected = True
 
     def check_connection(self) -> None:
         if not self.connected:
@@ -81,3 +85,25 @@ class TradingBot:
 
     def run(self, symbol: str) -> None:
         prices = self.exchange.get_market_data(symbol)
+        should_buy = self.trading_strategy.should_buy(prices)
+        should_sell = self.trading_strategy.should_sell(prices)
+        if should_buy:
+            self.exchange.buy(symbol, 10)
+        elif should_sell:
+            self.exchange.sell(symbol, 10)
+        else:
+            print(f"No action needed for {symbol}")
+
+
+def main() -> None:
+    exchange = Exchange()
+    exchange.connect()
+
+    trading_strategy = MinMaxTradingStrategy()
+
+    bot = TradingBot(exchange, trading_strategy)
+    bot.run(Symbol.BTCUSD)
+
+
+if __name__ == '__main__':
+    main()
