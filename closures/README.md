@@ -21,3 +21,6 @@ boils down to "mutable vs immutable"
 - Real-world example: generating specialized logging or formatting functions: you could write a factory that takes a format string or prefix and returns a logging function that prepends that format to all messages. In general, closures make it easy to package up configuration with behavior, producing concise and customized function objects on demand.
 
 - **Encapsulation and Data Hiding With Closures** troche już naciągane 
+
+# TAKEAWAY
+- Using a mutable obj. is a workaround that avoids needing explicit `nonlocal`

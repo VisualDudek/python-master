@@ -2,6 +2,9 @@
 "Python Master" is a collection of advanced Python concepts and techniques.
 
 ## Recent
+- closure
+- design pattern Registry
+- design pattern Registry + Plugin
 - `pymalloc`
 
 ## Structure
