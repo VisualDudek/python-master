@@ -22,6 +22,9 @@ def main():
     for _ in range(5):
         api_call()
         time.sleep(1)
+    print("Using legacy decorator style lost  __name__ and __doc__ attributes.")
+    print(f"Function name: {api_call.__name__=}")
+    print("Use functools.wraps to preserve them.")
 
 if __name__ == '__main__':
     main()
