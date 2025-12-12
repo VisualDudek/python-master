@@ -52,3 +52,15 @@ class DSU:
             self.rank[rx] += 1
 
         return True
+
+
+def main():
+    dsu = DSU(list('ABCD'))
+    print(dsu.parent)
+
+    dsu.union('A', 'B')
+    print(dsu.parent)
+
+
+if __name__ == '__main__':
+    main()
