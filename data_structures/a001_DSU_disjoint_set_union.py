@@ -47,7 +47,7 @@ class DSU:
             self.parent[rx] = ry
         elif self.rank[rx] > self.rank[ry]:
             self.parent[ry] = rx
-        else:
+        else:  # WHAT IS THIS CASE?
             self.parent[ry] = rx
             self.rank[rx] += 1
 
