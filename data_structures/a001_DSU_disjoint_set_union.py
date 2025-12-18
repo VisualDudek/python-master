@@ -47,7 +47,7 @@ class DSU:
             self.parent[rx] = ry
         elif self.rank[rx] > self.rank[ry]:
             self.parent[ry] = rx
-        else:  # WHAT IS THIS CASE?
+        else:  # WHAT IS THIS CASE? -> equal rank
             self.parent[ry] = rx
             self.rank[rx] += 1 # GOTCHA: this is counter-intuitive because:
             # When merging two trees of equal height, the resulting tree becomes one level taller because 
